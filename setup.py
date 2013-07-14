@@ -43,7 +43,7 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'simplicity = simplicity:command_line_runner',
+            'simplicity=simplicity:command_line_runner',
         ]
     },
 )

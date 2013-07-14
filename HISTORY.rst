@@ -1,3 +1,7 @@
+0.4.2 (2013-07-15)
+
+    * Fix console script entry point
+
 0.4.1 (2013-07-15)
 
     * History update
