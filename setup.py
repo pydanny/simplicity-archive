@@ -28,7 +28,6 @@ setup(
         "Development Status :: 4 - Beta",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
-        "Programming Language :: JavaScript",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.3",
         "Topic :: Software Development :: Libraries :: Python Modules",
