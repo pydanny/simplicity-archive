@@ -1,9 +1,13 @@
 simplicity
 ==========
 
-Converts ReStructuredText into JSON.
+Converts ReStructuredText into JSON. 
 
-Usage
+* **Sections** are JSON list dictionary elements 
+* **Section Headers**  become list titles.
+* **Field** definitions become key/value representations
+
+Example
 -------
 
 Input
@@ -25,16 +29,12 @@ Output
 .. code-block:: JavaScript
 
     [
-        {"Python":
-            {"age": 22, "typing": "dynamic, strong"}
-        },
-        {"Java":
-            {"age": 18, "typing": "static, strong"}
-        },
+        {"title": "Python", "age": 22, "typing": "dynamic, strong"}
+        {"title": "Java", "age": 18, "typing": "static, strong"}
     ]
     
-Try it out!
-------------
+Usage
+------
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ Try it out!
     $ cd simplicity/
     $ python simplicity.py sample.rst
     <type 'str'>
-    [{"Python": {"age": 22, "typing": "dynamic, strong"}},
-    {"Java ": {"age": 18, "typing": "static, strong"}},
-    {"GitHub": {"url": "https://github.com", 
-        "description": "Build software better, together."}}]
+    [{"age": 22, "typing": "dynamic, strong", "title": "Python"},
+        {"age": 18, "typing": "static, strong", "title": "Java "},
+        {"url": "https://github.com", "description": "Build software better, together.",
+            "title": "GitHub"}]

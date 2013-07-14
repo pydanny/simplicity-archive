@@ -1,3 +1,7 @@
+0.5.0 (2013-07-16)
+
+    * API Change for easier-to-navigate result data
+
 0.4.2 (2013-07-15)
 
     * Fix console script entry point

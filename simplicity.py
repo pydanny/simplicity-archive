@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Daniel Greenfeld'
-__version__ = "0.4.2"
+__version__ = "0.5.0"
 
 import json
 import string
@@ -18,8 +18,7 @@ def rst_to_json(filename):
 
     for line in text.splitlines():
         if len(line) and (line[0] in string.ascii_letters or line[0].isdigit()):
-            master_key = line
-            data = {master_key: {}}
+            data = {"title": line}
             records.append(
                 data
             )
@@ -27,7 +26,7 @@ def rst_to_json(filename):
             index = line.index(":", 1)
             key = line[1:index]
             value = line[index + 1:].strip()
-            data[master_key][key] = type_converter(value)
+            data[key] = type_converter(value)
 
     return json.dumps(records)
 
