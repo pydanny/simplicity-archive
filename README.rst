@@ -26,10 +26,10 @@ Output
 
     [
         {"Python":
-            {"age": 22, "typing": dynamic, strong}
+            {"age": 22, "typing": "dynamic, strong"}
         },
         {"Java":
-            {"age": 18, "typing": static, strong}
+            {"age": 18, "typing": "static, strong"}
         },
     ]
     
