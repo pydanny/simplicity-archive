@@ -25,15 +25,14 @@ setup(
     description="Converts ReStructuredText into JSON",
     long_description=LONG_DESCRIPTION + '\n\n' + HISTORY,
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
         "Programming Language :: JavaScript",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.3",
-        "Topic :: Internet :: WWW/HTTP",
-        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
         "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Text Processing :: Markup"
     ],
     keywords='python,json',
     author=simplicity.__author__,
@@ -43,6 +42,11 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'simplicity = simplicity:command_line_runner',
+        ]
+    },
 )
 
 # (*) Please direct queries to Github issue list, rather than to me directly
