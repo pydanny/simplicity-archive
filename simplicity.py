@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __author__ = 'Daniel Greenfeld'
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 import json
 import string
@@ -10,6 +10,7 @@ import sys
 
 
 def rst_to_json(filename):
+    """ I convert RST files with field lists into Dictionaries! """
     with open(filename) as f:
         text = f.read()
 
@@ -26,12 +27,24 @@ def rst_to_json(filename):
             index = line.index(":", 1)
             key = line[1:index]
             value = line[index + 1:].strip()
-            data[master_key][key] = value
+            data[master_key][key] = type_converter(value)
 
     return json.dumps(records)
 
 
+def type_converter(text):
+    """ I convert strings into integers, floats, and strings! """
+    if text.isdigit():
+        return int(text)
+
+    try:
+        return float(text)
+    except ValueError:
+        return text
+
+
 def command_line_runner():
+    """ I run functions from the command-line! """
     filename = sys.argv[-1]
     if filename.endswith("simplicity"):
         print("ERROR! Please enter a ReStructuredText filename!")
