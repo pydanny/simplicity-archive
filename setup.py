@@ -38,7 +38,7 @@ setup(
     author_email='pydanny@gmail.com',
     url='https://github.com/pydanny/simplicity',
     license='MIT',
-    packages=find_packages(),
+    py_modules=['simplicity', ],
     include_package_data=True,
     zip_safe=False,
     entry_points={

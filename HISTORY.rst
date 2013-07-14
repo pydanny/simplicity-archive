@@ -1,3 +1,7 @@
+0.5.1 (2013-07-16)
+
+    * Fighting poorly documented setup.py issues. :P
+
 0.5.0 (2013-07-16)
 
     * API Change for easier-to-navigate result data
