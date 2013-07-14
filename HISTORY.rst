@@ -1,3 +1,11 @@
+0.4.1 (2013-07-15)
+
+    * History update
+
+0.4.0 (2013-07-15)
+
+    * added type converter
+
 0.3.0 (2013-07-15)
 
     * Accepts command-line argument
