@@ -43,9 +43,11 @@ Usage
     $ cd simplicity/
     $ python simplicity.py sample.rst
     <type 'str'>
-    [{"age": 22, "typing": "dynamic, strong", "title": "Python"},
-        {"age": 18, "typing": "static, strong", "title": "Java "},
-        {"url": "https://github.com", "description": "Build software better, together.",
+    [{"age": 22, "typing": "dynamic, strong", "mascot": "snake", "title": "Python"},
+        {"age": 18, "typing": "static, strong", "mascot": "???", "title": "Java "},
+        {"url": "https://github.com",
+            "mascot": "Octocat",
+            "description": "Build software better, together.\nRuns with git or svn",
             "title": "GitHub"}]
 
 
