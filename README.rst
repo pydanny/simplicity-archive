@@ -1,6 +1,10 @@
 simplicity
 ==========
 
+Created because I needed an easy way to write JSON files for use with Complexity_.
+
+.. _Complexity: https://github.com/audreyr/complexity
+
 Converts ReStructuredText into JSON. 
 
 * **Sections** are JSON list dictionary elements 
