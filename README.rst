@@ -60,4 +60,4 @@ Simplicity is designed to be used with these packages:
 .. _`redis-py`: https://github.com/andymccurdy/redis-py
 
 
-Any other good uses for Simplicity? Let me know and I'll add it to the list!
+Know of any other good uses for Simplicity? Let me know and I'll add it to the list!
