@@ -17,16 +17,33 @@ def rst_to_json(filename):
     records = []
 
     for line in text.splitlines():
+        # set the title
         if len(line) and (line[0] in string.ascii_letters or line[0].isdigit()):
             data = {"title": line}
             records.append(
                 data
             )
+            continue
+
+        # Grab standard text fields
         if len(line) and line[0].startswith(":"):
             index = line.index(":", 1)
             key = line[1:index]
             value = line[index + 1:].strip()
             data[key] = type_converter(value)
+            continue
+
+        # Work on multi-line strings
+        if len(line) and line[0].startswith(" "):
+            if not isinstance(data[key], str):
+                # Not a string so continue on
+                continue
+            value = line.strip()
+            if not len(value):
+                # empty string, continue on
+                continue
+            # add next line
+            data[key] += "\n{}".format(value)
 
     return json.dumps(records)
 
