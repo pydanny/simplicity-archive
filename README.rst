@@ -47,3 +47,23 @@ Usage
         {"age": 18, "typing": "static, strong", "title": "Java "},
         {"url": "https://github.com", "description": "Build software better, together.",
             "title": "GitHub"}]
+
+
+Best Used With
+----------------
+
+Simplicity is designed to be used with these packages:
+
+* Complexity_: A refreshingly simple static site generator, for those who like to work in HTML.
+* `redis-py`_: Redis Python Client
+
+.. _Complexity: https://github.com/audreyr/complexity
+.. _`redis-py`: https://github.com/andymccurdy/redis-py
+
+
+Know of any other good uses for Simplicity? Let me know and I'll add it to the list!
+
+Examples
+---------
+
+* https://github.com/pydanny/simplicity-complexity-example
