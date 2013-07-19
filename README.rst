@@ -61,3 +61,8 @@ Simplicity is designed to be used with these packages:
 
 
 Know of any other good uses for Simplicity? Let me know and I'll add it to the list!
+
+Examples
+---------
+
+* https://github.com/pydanny/simplicity-complexity-example
