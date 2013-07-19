@@ -1,10 +1,6 @@
 simplicity
 ==========
 
-Created because I needed an easy way to write JSON files for use with Complexity_.
-
-.. _Complexity: https://github.com/audreyr/complexity
-
 Converts ReStructuredText into JSON. 
 
 * **Sections** are JSON list dictionary elements 
@@ -50,3 +46,14 @@ Usage
         {"age": 18, "typing": "static, strong", "title": "Java "},
         {"url": "https://github.com", "description": "Build software better, together.",
             "title": "GitHub"}]
+
+
+Best Used With
+----------------
+
+Simplicity is designed to be used with these packages:
+
+* Complexity_: A refreshingly simple static site generator, for those who like to work in HTML.
+* Simple, fast data generation for JSON stores: Redis, PostgreSQL HStore, and even MongoDB
+
+.. _Complexity: https://github.com/audreyr/complexity
