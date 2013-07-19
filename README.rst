@@ -58,3 +58,6 @@ Simplicity is designed to be used with these packages:
 
 .. _Complexity: https://github.com/audreyr/complexity
 .. _`redis-py`: https://github.com/andymccurdy/redis-py
+
+
+Any other good uses for Simplicity? Let me know and I'll add it to the list!
