@@ -1,3 +1,7 @@
+0.6.0 (2013-07-19)
+
+    * Support for multi-line strings
+
 0.5.1 (2013-07-16)
 
     * Fighting poorly documented setup.py issues. :P
