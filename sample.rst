@@ -3,6 +3,7 @@ Python
 :age: 22
 :typing: dynamic, strong
 :mascot: snake
+:price: 0.00
 
 Java 
 ----
