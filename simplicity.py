@@ -18,24 +18,37 @@ def file_opener(filename):
     with open(filename) as f:
         text = f.read()
     return text
+    
+def text_cleanup(data, key, last_type):
+    """ I strip extra whitespace off multi-line strings if they are ready to be stripped!"""
+    if key in data and last_type == STRING_TYPE:
+        data[key] = data[key].strip()
+    return data
 
 
 def rst_to_json(text):
-    """ I convert Restructured Text with field lists into Dictionaries! """
+    """ I convert Restructured Text with field lists into Dictionaries!
+    
+        TODO: Convert to text node approach.
+    """
     records = []
     last_type = None
+    key = None
+    data = {}
 
     for line in text.splitlines():
         # set the title
         if len(line) and (line[0] in string.ascii_letters or line[0].isdigit()):
+            data = text_cleanup(data, key, last_type)
             data = {"title": line}
             records.append(
                 data
             )
             continue
 
-        # Grab standard text fields
+        # Grab standard fields (int, string, float)
         if len(line) and line[0].startswith(":"):
+            data = text_cleanup(data, key, last_type)
             index = line.index(":", 1)
             key = line[1:index]
             value = line[index + 1:].strip()
@@ -53,6 +66,10 @@ def rst_to_json(text):
                 continue
             # add next line
             data[key] += "\n{}".format(value)
+            continue
+            
+        if last_type == STRING_TYPE and not len(line):
+            data[key] += "\n"
 
     return json.dumps(records)
 

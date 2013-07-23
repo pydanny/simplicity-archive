@@ -5,21 +5,16 @@ import json
 import sys
 import unittest
 
-from simplicity import rst_to_json
+from simplicity import rst_to_json, file_opener
 
 # Python 3 compatibility 
 P3K = sys.version > '3'
 STRING_TYPE = str if P3K else unicode
 
-MULTILINE_STRING_TEST = """Build software better, together.
+MULTILINE_STRING_TEST = """A fun programming language.
 
-Runs with git or svn"""
+Used to build simplicity!"""
 
-
-
-
-class FileOpener(unittest.TestCase):
-    pass
 
 class Rst2Json(unittest.TestCase):
     
@@ -41,7 +36,19 @@ class Rst2Json(unittest.TestCase):
         self.assertTrue(isinstance(self.data[0]['mascot'], STRING_TYPE))
         
     def test_multiline_string(self):
-        self.assertEquals(self.data[2]['description'], MULTILINE_STRING_TEST)
+        self.assertEquals(self.data[0]['description'], MULTILINE_STRING_TEST)
+
+        
+class FileOpener(unittest.TestCase):
+    pass
+
+
+class TextCleanup(unittest.TestCase):
+    pass
+    
+    
+class TypeConverter(unittest.TestCase):
+    pass
         
 
 if __name__ == '__main__':

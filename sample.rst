@@ -4,6 +4,9 @@ Python
 :typing: dynamic, strong
 :mascot: snake
 :price: 0.00
+:description: A fun programming language.
+
+    Used to build simplicity!
 
 Java 
 ----
@@ -14,7 +17,4 @@ Java
 GitHub
 --------
 :url: https://github.com
-:description: Build software better, together.
-
-    Runs with git or svn
 :mascot: Octocat
