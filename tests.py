@@ -17,6 +17,7 @@ Used to build simplicity!"""
 
 
 class Rst2Json(unittest.TestCase):
+    """ I test all facets of the Rst2Json function! Cool!"""
     
     def setUp(self):
         with open('sample.rst') as f:

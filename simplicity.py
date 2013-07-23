@@ -94,6 +94,4 @@ def command_line_runner():
     print(rst_to_json(file_opener(filename)))
 
 if __name__ == "__main__":
-    output = rst_to_json("sample.rst")
-    print(type(output))
-    print(output)
+    command_line_runner()
