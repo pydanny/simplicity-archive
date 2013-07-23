@@ -1,3 +1,12 @@
+History
+=======
+
+0.6.1 (2013-07-23)
+
+    * Better multi-line string support
+    * Fixed some Python 3 issues
+    * Added tests!
+
 0.6.0 (2013-07-19)
 
     * Support for multi-line strings
