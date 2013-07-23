@@ -23,6 +23,23 @@ class Rst2Json(unittest.TestCase):
             text = rst_to_json(f.read())
         self.data = json.loads(text)
 
+    def test_number_of_records(self):
+        """ I test that the right number of records are created! """
+        self.assertEqual(len(self.data), 3)
+
+    def test_types(self):
+        """ I test that Simplicity makes a list and each element is a dictionary! """
+        self.assertTrue(isinstance(self.data, list))
+        self.assertTrue(isinstance(self.data[0], dict))
+        self.assertTrue(isinstance(self.data[1], dict))
+        self.assertTrue(isinstance(self.data[2], dict))
+        
+    def test_titles(self):
+        """ I test that each record has it's title element as it's dictionary title!"""
+        self.assertEqual(self.data[0]['title'], "Python")
+        self.assertEqual(self.data[1]['title'], "Java")
+        self.assertEqual(self.data[2]['title'], "GitHub")
+
     def test_integer(self):
         """ I test integers by looking at the age of Python! """
         self.assertTrue(isinstance(self.data[0]['age'], int))

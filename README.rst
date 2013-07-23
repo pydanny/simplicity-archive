@@ -42,13 +42,27 @@ Usage
     $ git clone git@github.com:pydanny/simplicity.git
     $ cd simplicity/
     $ python simplicity.py sample.rst
-    <type 'str'>
-    [{"age": 22, "typing": "dynamic, strong", "mascot": "snake", "title": "Python"},
-        {"age": 18, "typing": "static, strong", "mascot": "???", "title": "Java "},
-        {"url": "https://github.com",
+    [
+        {
+            "description": "A fun programming language.\n\nUsed to build simplicity!",    
+            "title": "Python",
+            "price": 0.0,
+            "typing": "dynamic, strong",
+            "age": 22,
+            "mascot": "snake"
+        },
+        {
+            "age": 18,
+            "typing": "static, strong",
+            "mascot": "???",
+            "title": "Java"
+        },
+        {
+            "url": "https://github.com",
             "mascot": "Octocat",
-            "description": "Build software better, together.\nRuns with git or svn",
-            "title": "GitHub"}]
+            "title": "GitHub"
+        }
+    ]
 
 
 Best Used With

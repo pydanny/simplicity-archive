@@ -40,7 +40,7 @@ def rst_to_json(text):
         # set the title
         if len(line) and (line[0] in string.ascii_letters or line[0].isdigit()):
             data = text_cleanup(data, key, last_type)
-            data = {"title": line}
+            data = {"title": line.strip()}
             records.append(
                 data
             )
