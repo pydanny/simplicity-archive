@@ -5,7 +5,7 @@ import json
 import sys
 import unittest
 
-from simplicity import rst_to_json, file_opener
+import simplicity
 
 # Python 3 compatibility 
 P3K = sys.version > '3'
@@ -21,7 +21,7 @@ class Rst2Json(unittest.TestCase):
     
     def setUp(self):
         with open('sample.rst') as f:
-            text = rst_to_json(f.read())
+            text = simplicity.rst_to_json(f.read())
         self.data = json.loads(text)
 
     def test_number_of_records(self):
@@ -58,7 +58,19 @@ class Rst2Json(unittest.TestCase):
 
         
 class FileOpener(unittest.TestCase):
-    pass
+
+    def test_basics(self):
+        """ I test that file_opener returns more than just itself!"""
+        text = simplicity.file_opener("sample.rst")
+        self.assertNotEqual(text, "sample.rst")
+        text = simplicity.file_opener("README.rst")
+        self.assertNotEqual(text, "README.rst")
+
+    def test_basics(self):
+        """ I test that file_opener gets things correctly!"""
+        with open("sample.rst") as f:
+            text = f.read()
+        self.assertEqual(text, simplicity.file_opener("sample.rst"))
 
 
 class TextCleanup(unittest.TestCase):
