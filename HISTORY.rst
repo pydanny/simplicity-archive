@@ -1,6 +1,10 @@
 History
 =======
 
+0.6.2 (2013-07-25)
+
+    * Fixes the problem with normal text after field definitions.
+
 0.6.1 (2013-07-23)
 
     * Better multi-line string support
