@@ -7,7 +7,7 @@ import unittest
 
 import simplicity
 
-# Python 3 compatibility 
+# Python 3 compatibility
 P3K = sys.version > '3'
 STRING_TYPE = str if P3K else unicode
 
@@ -18,7 +18,7 @@ Used to build simplicity!"""
 
 class Rst2Json(unittest.TestCase):
     """ I test all facets of the Rst2Json function! Cool!"""
-    
+
     def setUp(self):
         with open('sample.rst') as f:
             text = simplicity.rst_to_json(f.read())
@@ -34,7 +34,7 @@ class Rst2Json(unittest.TestCase):
         self.assertTrue(isinstance(self.data[0], dict))
         self.assertTrue(isinstance(self.data[1], dict))
         self.assertTrue(isinstance(self.data[2], dict))
-        
+
     def test_titles(self):
         """ I test that each record has it's title element as it's dictionary title!"""
         self.assertEqual(self.data[0]['title'], "Python")
@@ -52,11 +52,11 @@ class Rst2Json(unittest.TestCase):
     def test_string(self):
         """ I test strings by looking at Python's mascot! """
         self.assertTrue(isinstance(self.data[0]['mascot'], STRING_TYPE))
-        
+
     def test_multiline_string(self):
         self.assertEquals(self.data[0]['description'], MULTILINE_STRING_TEST)
 
-        
+
 class FileOpener(unittest.TestCase):
 
     def test_basics(self):
@@ -66,7 +66,7 @@ class FileOpener(unittest.TestCase):
         text = simplicity.file_opener("README.rst")
         self.assertNotEqual(text, "README.rst")
 
-    def test_basics(self):
+    def test_open(self):
         """ I test that file_opener gets things correctly!"""
         with open("sample.rst") as f:
             text = f.read()
@@ -75,13 +75,11 @@ class FileOpener(unittest.TestCase):
 
 class TextCleanup(unittest.TestCase):
     pass
-    
-    
+
+
 class TypeConverter(unittest.TestCase):
     pass
-        
+
 
 if __name__ == '__main__':
     unittest.main()
-
-

@@ -8,7 +8,7 @@ import json
 import string
 import sys
 
-# Python 3 compatibility 
+# Python 3 compatibility
 P3K = sys.version > '3'
 STRING_TYPE = str if P3K else unicode
 
@@ -18,7 +18,8 @@ def file_opener(filename):
     with open(filename) as f:
         text = f.read()
     return text
-    
+
+
 def text_cleanup(data, key, last_type):
     """ I strip extra whitespace off multi-line strings if they are ready to be stripped!"""
     if key in data and last_type == STRING_TYPE:
@@ -28,7 +29,7 @@ def text_cleanup(data, key, last_type):
 
 def rst_to_json(text):
     """ I convert Restructured Text with field lists into Dictionaries!
-    
+
         TODO: Convert to text node approach.
     """
     records = []
@@ -67,7 +68,7 @@ def rst_to_json(text):
             # add next line
             data[key] += "\n{}".format(value)
             continue
-            
+
         if last_type == STRING_TYPE and not len(line):
             data[key] += "\n"
 
