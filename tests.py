@@ -55,6 +55,7 @@ class Rst2Json(unittest.TestCase):
 
     def test_multiline_string(self):
         self.assertEquals(self.data[0]['description'], MULTILINE_STRING_TEST)
+        print self.data
 
 
 class FileOpener(unittest.TestCase):

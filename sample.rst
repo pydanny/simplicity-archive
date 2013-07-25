@@ -8,6 +8,8 @@ Python
 
     Used to build simplicity!
 
+My favorite programming language. This line is ignored by simplicity.
+
 Java 
 ----
 :age: 18
@@ -18,3 +20,5 @@ GitHub
 --------
 :url: https://github.com
 :mascot: Octocat
+
+These are three code examples.

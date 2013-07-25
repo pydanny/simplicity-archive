@@ -11,6 +11,7 @@ import sys
 # Python 3 compatibility
 P3K = sys.version > '3'
 STRING_TYPE = str if P3K else unicode
+DIVIDERS = ['~', '=', '-', '+', '_']
 
 
 def file_opener(filename):
@@ -37,9 +38,15 @@ def rst_to_json(text):
     key = None
     data = {}
 
-    for line in text.splitlines():
+    lines = text.splitlines()
+    for index, line in enumerate(lines):
         # set the title
         if len(line) and (line[0] in string.ascii_letters or line[0].isdigit()):
+            try:
+                if lines[index + 1][0] not in DIVIDERS:
+                    continue
+            except IndexError:
+                continue
             data = text_cleanup(data, key, last_type)
             data = {"title": line.strip()}
             records.append(
