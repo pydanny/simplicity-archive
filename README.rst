@@ -6,7 +6,8 @@ Converts ReStructuredText into JSON.
 
 * **Sections** are JSON list dictionary elements 
 * **Section Headers**  become list titles.
-* **Field** definitions become key/value representations
+* **Field** definitions become key/value representations.
+* **Directives** are ignored.
 
 Example
 -------
