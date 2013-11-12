@@ -1,9 +1,10 @@
 History
 =======
 
-0.6.2 (2013-07-25)
+0.6.2 (2013-11-12)
 
     * Fixes the problem with normal text after field definitions.
+    * Handles RST directives gracefully
 
 0.6.1 (2013-07-23)
 
