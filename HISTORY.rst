@@ -1,10 +1,13 @@
 History
 =======
 
-0.6.2 (2013-11-12)
+0.6.3 (2013-11-12)
+
+    * Handles RST directives gracefully (ignores them)
+
+0.6.2 (2013-07-25)
 
     * Fixes the problem with normal text after field definitions.
-    * Handles RST directives gracefully
 
 0.6.1 (2013-07-23)
 
