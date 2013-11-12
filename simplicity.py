@@ -37,11 +37,19 @@ def rst_to_json(text):
     last_type = None
     key = None
     data = {}
+    directive = False
 
     lines = text.splitlines()
     for index, line in enumerate(lines):
+
+        # check for directives
+        if len(line) and line.strip().startswith(".."):
+            directive = True
+            continue
+
         # set the title
         if len(line) and (line[0] in string.ascii_letters or line[0].isdigit()):
+            directive = False
             try:
                 if lines[index + 1][0] not in DIVIDERS:
                     continue
@@ -61,10 +69,11 @@ def rst_to_json(text):
             key = line[1:index]
             value = line[index + 1:].strip()
             data[key], last_type = type_converter(value)
+            directive = False
             continue
 
         # Work on multi-line strings
-        if len(line) and line[0].startswith(" "):
+        if len(line) and line[0].startswith(" ") and directive == False:
             if not isinstance(data[key], str):
                 # Not a string so continue on
                 continue

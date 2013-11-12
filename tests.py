@@ -23,6 +23,9 @@ class Rst2Json(unittest.TestCase):
         with open('sample.rst') as f:
             text = simplicity.rst_to_json(f.read())
         self.data = json.loads(text)
+        with open('sample2.rst') as f:
+            text = simplicity.rst_to_json(f.read())
+        self.data2 = json.loads(text)
 
     def test_number_of_records(self):
         """ I test that the right number of records are created! """
@@ -55,7 +58,9 @@ class Rst2Json(unittest.TestCase):
 
     def test_multiline_string(self):
         self.assertEquals(self.data[0]['description'], MULTILINE_STRING_TEST)
-        print self.data
+
+    def test_directives(self):
+        self.assertEquals(self.data2[0]['title'], u'My Title (Sample ReST document)')
 
 
 class FileOpener(unittest.TestCase):

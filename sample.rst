@@ -22,3 +22,8 @@ GitHub
 :mascot: Octocat
 
 These are three code examples.
+
+.. image:: https://nowhere.org/xxx.png
+    :target: https://nowhere.org/xxx-target/
+
+More text
