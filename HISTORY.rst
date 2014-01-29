@@ -1,6 +1,10 @@
 History
 =======
 
+0.6.4 (2014-01-29)
+
+    * Handle case where the key is not in the dict (thanks @greatdesignisnotenough)
+
 0.6.3 (2013-11-12)
 
     * Handles RST directives gracefully (ignores them)
