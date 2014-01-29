@@ -86,7 +86,8 @@ def rst_to_json(text):
             continue
 
         if last_type == STRING_TYPE and not len(line):
-            data[key] += "\n"
+            if key in data.keys():
+                data[key] += "\n"
 
     return json.dumps(records)
 
